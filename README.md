@@ -389,6 +389,7 @@ As consultas utilizam recursos como SELECT, WHERE, ORDER BY, INNER JOIN, GROUP B
 - SQL — Linguagem de definição, manipulação e consulta de dados.
 - GitHub — Versionamento e disponibilização do projeto.
 - Markdown — Documentação técnica.
+- ChatGPT (OpenAI) — Inteligência artificial generativa utilizada no desenvolvimento colaborativo, aprendizado, revisão e documentação do projeto.
 
 ---
 
@@ -459,6 +460,69 @@ O projeto EntregaFácil demonstra a aplicação prática dos conceitos de modela
 A implementação contempla oito tabelas, relacionamentos de diferentes cardinalidades, restrições de integridade, 5.000 registros fictícios, operações CRUD e dez relatórios SQL.
 
 O projeto permite compreender as etapas de desenvolvimento de um banco de dados, desde a identificação das necessidades do negócio até a implementação, manipulação, validação e consulta das informações.
+
+
+---
+
+## 13. Utilização de Inteligência Artificial no Desenvolvimento
+
+Conforme a orientação do professor, este projeto foi desenvolvido com o auxílio de Inteligência Artificial Generativa, utilizando o ChatGPT, desenvolvido pela OpenAI, como ferramenta de apoio técnico, educacional e colaborativo.
+
+A inteligência artificial participou de todas as etapas do desenvolvimento, auxiliando nas seguintes atividades:
+
+- Definição do cenário e identificação das necessidades do negócio.
+- Levantamento das entidades, atributos e relacionamentos.
+- Desenvolvimento e revisão da modelagem conceitual e lógica.
+- Elaboração e correção dos diagramas DER e MER.
+- Desenvolvimento dos scripts SQL.
+- Implementação física do banco de dados no Supabase.
+- Geração de 5.000 registros fictícios.
+- Identificação, análise e correção de erros.
+- Elaboração de consultas de auditoria e validação.
+- Desenvolvimento e aprimoramento das operações CRUD.
+- Elaboração dos dez relatórios SQL.
+- Organização e versionamento dos arquivos no GitHub.
+- Elaboração e revisão da documentação técnica.
+
+O desenvolvimento ocorreu de maneira colaborativa e interativa entre o estudante e a inteligência artificial, por meio de orientações, explicações, sugestões, revisões e testes sucessivos.
+
+Os códigos sugeridos pela inteligência artificial foram executados e avaliados pelo estudante no ambiente Supabase, permitindo a identificação de inconsistências, a realização de ajustes e a validação dos resultados obtidos.
+
+A utilização da IA não se limitou à geração de códigos, mas também contribuiu para a compreensão dos conceitos de modelagem de banco de dados, linguagem SQL, integridade referencial, resolução de problemas e documentação de software.
+
+### 13.1 Ferramenta utilizada
+
+| Informação | Descrição |
+|---|---|
+| Ferramenta | ChatGPT |
+| Desenvolvedor | OpenAI |
+| Tecnologia | Inteligência Artificial Generativa |
+| Finalidade | Apoio técnico, educacional e colaborativo |
+| Participação | Todas as etapas do desenvolvimento |
+
+Site oficial: [ChatGPT — OpenAI](https://chatgpt.com/)
+
+### 13.2 Responsabilidade acadêmica
+
+A inteligência artificial foi utilizada como ferramenta de apoio ao desenvolvimento, conforme a orientação do professor.
+
+O estudante participou ativamente das decisões, da implementação, da execução dos códigos, dos testes, das validações e da organização final do projeto, assumindo a responsabilidade acadêmica pelo trabalho apresentado.
+
+
+### 13.3 Registro do desenvolvimento com IA
+
+Como forma de transparência acadêmica e documentação
+do processo de aprendizagem, disponibiliza-se o registro
+da interação com o ChatGPT durante o desenvolvimento
+do projeto EntregaFácil.
+
+O histórico permite acompanhar as decisões técnicas,
+orientações, dificuldades encontradas, correções,
+testes e validações realizados ao longo do projeto.
+
+[Acessar o histórico de desenvolvimento com o ChatGPT](https://chatgpt.com/share/6b0b0ec0-2b34-83e8-92b5-6ad39a322807)
+
+
 
 ---
 
