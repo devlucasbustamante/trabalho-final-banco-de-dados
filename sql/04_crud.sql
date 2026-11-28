@@ -1,20 +1,35 @@
+
 -- ============================================================
 -- ENTREGAFACIL - TRABALHO FINAL DE BANCO DE DADOS
 -- 04_crud.sql - Demonstracao das operacoes CRUD
 -- Esquema: academico | Tabela: rotas
 -- Consultas originais: 38 a 42
--- ATENCAO: o ID 501 corresponde ao teste original.
--- Em uma nova demonstracao, execute a insercao separadamente,
--- confira o ID retornado e substitua 501 nas consultas seguintes.
--- Nao execute este arquivo integralmente em uma base ja povoada.
+-- O ID da rota de teste e capturado automaticamente.
+-- Execute o script completo na mesma sessao.
 -- ============================================================
 
+BEGIN;
+
+-- Tabela temporaria para armazenar o ID gerado.
+CREATE TEMP TABLE controle_crud (
+    id BIGINT PRIMARY KEY
+) ON COMMIT DROP;
+
 -- 38 - CREATE: inserir uma rota ficticia de teste.
-INSERT INTO academico.rotas
-    (nome, data, distancia_km)
-VALUES
-    ('Rota Teste CRUD', CURRENT_DATE, 125.50)
-RETURNING *;
+WITH nova_rota AS (
+    INSERT INTO academico.rotas
+        (nome, data, distancia_km)
+    VALUES
+        ('Rota Teste CRUD', CURRENT_DATE, 125.50)
+    RETURNING id
+)
+INSERT INTO controle_crud (id)
+SELECT id FROM nova_rota;
+
+-- Exibir a rota criada.
+SELECT *
+FROM academico.rotas
+WHERE id = (SELECT id FROM controle_crud);
 
 -- 39 - READ: consultar a rota inserida.
 SELECT
@@ -23,21 +38,25 @@ SELECT
     data,
     distancia_km
 FROM academico.rotas
-WHERE id = 501;
+WHERE id = (SELECT id FROM controle_crud);
 
--- 40 - UPDATE: alterar a distancia da rota de teste.
+-- 40 - UPDATE: alterar a distancia da rota.
 UPDATE academico.rotas
 SET distancia_km = 150.00
-WHERE id = 501
-RETURNING *;
-
--- 41 - DELETE: excluir a rota de teste, conferindo ID e nome.
-DELETE FROM academico.rotas
-WHERE id = 501
+WHERE id = (SELECT id FROM controle_crud)
   AND nome = 'Rota Teste CRUD'
 RETURNING *;
 
--- 42 - Validacao: verificar a exclusao (esperado: zero linhas).
+-- 41 - DELETE: excluir somente a rota de teste.
+DELETE FROM academico.rotas
+WHERE id = (SELECT id FROM controle_crud)
+  AND nome = 'Rota Teste CRUD'
+RETURNING *;
+
+-- 42 - Validacao: verificar a exclusao.
+-- Resultado esperado: zero linhas.
 SELECT *
 FROM academico.rotas
-WHERE id = 501;
+WHERE id = (SELECT id FROM controle_crud);
+
+COMMIT;
