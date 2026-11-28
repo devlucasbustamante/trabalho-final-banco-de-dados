@@ -1,4 +1,3 @@
-
 # EntregaFácil — Sistema de Gestão de Encomendas
 
 ## Trabalho Final de Modelagem de Banco de Dados
@@ -14,7 +13,7 @@ Projeto acadêmico de modelagem e implementação de um banco de dados relaciona
 | Total de tabelas | 8 |
 | Total de registros | 5.000 |
 | Relatórios SQL | 10 |
-| Evidências | 25 imagens |
+| Evidências | 37 imagens |
 
 ---
 
@@ -348,7 +347,7 @@ O teste confirmou a exclusão da rota de demonstração e a preservação da qua
 
 Foram desenvolvidos dez relatórios para responder a questões relacionadas à operação da empresa.
 
-As consultas utilizam recursos como SELECT, WHERE, ORDER BY, INNER JOIN, GROUP BY, COUNT e LIMIT.
+As consultas utilizam recursos como SELECT, WHERE, ORDER BY, INNER JOIN, LEFT JOIN, GROUP BY, COUNT e LIMIT.
 
 | Nº | Relatório | Questão de negócio |
 |---|---|---|
@@ -357,24 +356,26 @@ As consultas utilizam recursos como SELECT, WHERE, ORDER BY, INNER JOIN, GROUP B
 | 03 | Encomendas em transporte | Quais encomendas estão em transporte e quem são seus entregadores? |
 | 04 | Encomendas por cidade | Quais cidades possuem maior volume de encomendas? |
 | 05 | Encomendas por veículo | Quais tipos de veículos estão associados a mais encomendas? |
-| 06 | Ranking das rotas | Quais rotas possuem as maiores distâncias? |
-| 07 | Ranking de entregadores | Quais entregadores estão vinculados a mais rotas? |
+| 06 | Ranking das rotas | Quais rotas possuem as maiores distâncias e quantos entregadores estão associados a elas? |
+| 07 | Ranking de entregadores | Quais entregadores ativos estão vinculados a mais rotas? |
 | 08 | Movimentações das encomendas | Quais encomendas possuem mais registros de histórico? |
 | 09 | Ranking de telefones | Quais usuários possuem mais telefones cadastrados? |
 | 10 | Encomendas entregues | Quais encomendas foram entregues e quais são seus destinos? |
 
 ### 7.1 Evidências dos relatórios
 
-- [Relatório 01](prints/04_relatorios/12_relatorio_01_encomendas_por_status.png)
-- [Relatório 02](prints/04_relatorios/13_relatorio_02_ranking_usuarios.png)
-- [Relatório 03](prints/04_relatorios/14_relatorio_03_encomendas_em_transporte.png)
-- [Relatório 04](prints/04_relatorios/15_relatorio_04_encomendas_por_cidade.png)
-- [Relatório 05](prints/04_relatorios/16_relatorio_05_encomendas_por_veiculo.png)
-- [Relatório 06](prints/04_relatorios/17_relatorio_06_ranking_rotas.png)
-- [Relatório 07](prints/04_relatorios/18_relatorio_07_ranking_entregadores.png)
-- [Relatório 08](prints/04_relatorios/19_relatorio_08_movimentacoes_encomendas.png)
-- [Relatório 09](prints/04_relatorios/20_relatorio_09_ranking_telefones.png)
-- [Relatório 10](prints/04_relatorios/21_relatorio_10_encomendas_entregues.png)
+As 22 imagens abaixo documentam os dez relatórios SQL.
+
+- Relatório 01: [Evidência](prints/04_relatorios/12_relatorio_01_encomendas_por_status.png)
+- Relatório 02: [Parte 1](prints/04_relatorios/13_relatorio_02_ranking_usuarios_parte1.png) | [Parte 2](prints/04_relatorios/13_relatorio_02_ranking_usuarios_parte2.png) | [Parte 3](prints/04_relatorios/13_relatorio_02_ranking_usuarios_parte3.png)
+- Relatório 03: [Parte 1](prints/04_relatorios/14_relatorio_03_encomendas_em_transporte_parte1.png) | [Parte 2](prints/04_relatorios/14_relatorio_03_encomendas_em_transporte_parte2.png)
+- Relatório 04: [Evidência](prints/04_relatorios/15_relatorio_04_encomendas_por_cidade.png)
+- Relatório 05: [Evidência](prints/04_relatorios/16_relatorio_05_encomendas_por_veiculo.png)
+- Relatório 06: [Parte 1](prints/04_relatorios/17_relatorio_06_ranking_rotas_parte1.png) | [Parte 2](prints/04_relatorios/17_relatorio_06_ranking_rotas_parte2.png) | [Parte 3](prints/04_relatorios/17_relatorio_06_ranking_rotas_parte3.png)
+- Relatório 07: [Parte 1](prints/04_relatorios/18_relatorio_07_ranking_entregadores_parte1.png) | [Parte 2](prints/04_relatorios/18_relatorio_07_ranking_entregadores_parte2.png) | [Parte 3](prints/04_relatorios/18_relatorio_07_ranking_entregadores_parte3.png)
+- Relatório 08: [Parte 1](prints/04_relatorios/19_relatorio_08_movimentacoes_encomendas_parte1.png) | [Parte 2](prints/04_relatorios/19_relatorio_08_movimentacoes_encomendas_parte2.png) | [Parte 3](prints/04_relatorios/19_relatorio_08_movimentacoes_encomendas_parte3.png)
+- Relatório 09: [Parte 1](prints/04_relatorios/20_relatorio_09_ranking_telefones_parte1.png) | [Parte 2](prints/04_relatorios/20_relatorio_09_ranking_telefones_parte2.png) | [Parte 3](prints/04_relatorios/20_relatorio_09_ranking_telefones_parte3.png)
+- Relatório 10: [Parte 1](prints/04_relatorios/21_relatorio_10_encomendas_entregues_parte1.png) | [Parte 2](prints/04_relatorios/21_relatorio_10_encomendas_entregues_parte2.png)
 
 ### 7.2 Script dos relatórios
 
@@ -416,6 +417,18 @@ As consultas utilizam recursos como SELECT, WHERE, ORDER BY, INNER JOIN, GROUP B
     |   |-- 06_validacoes.sql
     |
     |-- README.md
+
+---
+
+### 9.1 Distribuição das evidências
+
+| Pasta | Imagens |
+|---|---:|
+| 01_implementacao_fisica | 6 |
+| 02_povoamento_validacao | 3 |
+| 03_crud | 6 |
+| 04_relatorios | 22 |
+| **Total** | **37** |
 
 ---
 
